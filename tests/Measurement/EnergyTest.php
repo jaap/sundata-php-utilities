@@ -14,7 +14,7 @@ class EnergyTest extends TestCase
         $this->assertInstanceOf(FormattedMeasurement::class, $energy->format());
     }
 
-    public function formatDataProvider(): array
+    public static function formatDataProvider(): array
     {
         return [
             [$kwh = 1, 'Wh'],

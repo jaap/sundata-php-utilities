@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class StringUtilTest extends TestCase
 {
-    public function rangesExplodeDataProvider()
+    public static function rangesExplodeDataProvider()
     {
         return [ // @formatter:off
             // input ?invalidArg, outcome

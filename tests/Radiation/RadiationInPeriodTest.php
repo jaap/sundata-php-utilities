@@ -11,7 +11,7 @@ use Sundata\Utilities\Time\Period;
 
 class RadiationInPeriodTest extends TestCase
 {
-    public function RadiationInPeriodDataProvider(): Generator
+    public static function RadiationInPeriodDataProvider(): Generator
     {
         yield 'Full year, but you forget end-is-exclusive' => [
             '2019-01-01',
