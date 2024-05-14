@@ -91,7 +91,7 @@ class RadiationInPeriodTest extends TestCase
         ];
     }
 
-    public function sumDataProvider(): Generator
+    public static function sumDataProvider(): Generator
     {
         $expectedDecember = 5385;
         yield 'December' => [
