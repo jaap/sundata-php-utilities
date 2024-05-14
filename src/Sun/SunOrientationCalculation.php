@@ -3,7 +3,9 @@
 namespace Sundata\Utilities\Sun;
 
 // shortcuts for easier to read formulas
+use Carbon\CarbonImmutable;
 use DateTime;
+use Sundata\Utilities\Services\CarbonService;
 
 define('PI', M_PI);
 define('rad', PI / 180);
@@ -77,6 +79,9 @@ class SunOrientationCalculation {
 
 
     public function toJulian($date, $timezone) {
+        if($date instanceof CarbonImmutable){
+            $date = $date->format('Y-m-d H:i:s');
+        }
         $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $date, $timezone);
         $date->setTimezone('UTC');
         $julianDate = $date->getTimestamp() / daySec - 0.5 + J1970;
