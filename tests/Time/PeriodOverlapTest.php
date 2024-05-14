@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 class PeriodOverlapTest extends TestCase
 {
 
-    public function periodOverlapDataProvider(): \Generator
+    public static function periodOverlapDataProvider(): \Generator
     {
         yield 'No overlap returns null' => [
             new Period(

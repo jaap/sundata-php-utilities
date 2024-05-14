@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 class DateSplitterTest extends TestCase
 {
 
-    public function hourSplitDataProvider()
+    public static function hourSplitDataProvider()
     {
         return [
 
@@ -54,7 +54,7 @@ class DateSplitterTest extends TestCase
     }
 
 
-    public function daySplitDataProvider(): Generator
+    public static function daySplitDataProvider(): Generator
     {
         yield 'simple' => ['2015-12-27T22:22:00+01:00', '2015-12-29T01:11:00+01:00', [
             ['2015-12-27T22:22:00+01:00', '2015-12-28T00:00:00+01:00'],
@@ -73,7 +73,7 @@ class DateSplitterTest extends TestCase
         $this->assertSplit($start, $end, $expectedPeriodsArray, 'splitInDays', 'splitPeriodInDays');
     }
 
-    public function weekSplitDataProvider()
+    public static function weekSplitDataProvider()
     {
         return [
             ['2015-12-27T00:00:00Z', '2016-01-19T00:00:00Z', [
@@ -100,7 +100,7 @@ class DateSplitterTest extends TestCase
     }
 
 
-    public function monthSplitDataProvider()
+    public static function monthSplitDataProvider()
     {
         return [
             ['2015-11-27T00:00:00Z', '2016-03-29T00:00:00Z', [
@@ -119,7 +119,7 @@ class DateSplitterTest extends TestCase
         $this->assertSplit($start, $end, $expectedPeriodsArray, 'splitInMonths', 'splitPeriodInMonths');
     }
 
-    public function yearSplitDataProvider()
+    public static function yearSplitDataProvider()
     {
         return [
             // Zulu time explicit
@@ -170,7 +170,7 @@ class DateSplitterTest extends TestCase
         $this->assertEquals($expectedPeriods, $period);
     }
 
-    public function split24hDataProvider(): Generator
+    public static function split24hDataProvider(): Generator
     {
         yield 'simple' => ['2015-12-27T22:22:00+01:00', '2015-12-29T01:11:00+01:00', [
             ['2015-12-27T22:22:00+01:00', '2015-12-28T22:22:00+01:00'],

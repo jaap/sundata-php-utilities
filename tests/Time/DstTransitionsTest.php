@@ -8,7 +8,7 @@ use Sundata\Utilities\Time\DstTransitions;
 
 class DstTransitionsTest extends TestCase
 {
-    function dataProvider(): array
+    static function dataProvider(): array
     {
         return [
             [2002, '2002-03-31T01:00:00Z', '2002-10-27T01:00:00Z'],
