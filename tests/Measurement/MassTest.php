@@ -14,7 +14,7 @@ class MassTest extends TestCase
         $this->assertInstanceOf(FormattedMeasurement::class, $mass->format());
     }
 
-    public function formatDataProvider(): array
+    public static function formatDataProvider(): array
     {
         return [
             [$kg = 1, 'g'],
@@ -64,10 +64,10 @@ class MassTest extends TestCase
     }
 
     /** @dataProvider formatsToTheRightValueAndUnitDataProvider */
-    public function testItFormatsToTheRightValueAndUnit($inputKg, $expectedString)
+    public static function testItFormatsToTheRightValueAndUnit($inputKg, $expectedString)
     {
         $mass = Mass::fromKg($inputKg);
-        $this->assertEquals($expectedString, $mass->__toString());
+        self::assertEquals($expectedString, $mass->__toString());
     }
 
     public function testSettingPrecisionWorks()

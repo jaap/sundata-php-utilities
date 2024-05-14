@@ -10,7 +10,7 @@ use Sundata\Utilities\Radiation\MeterFacts;
 
 class MeterRadiationTest extends TestCase
 {
-    public function MeterRadiationDataProvider(): Generator
+    public static function MeterRadiationDataProvider(): Generator
     {
         yield 'South facing 80 degrees should return 107 W/m2' => [
             new MeterFacts(

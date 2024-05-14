@@ -170,7 +170,7 @@ class RadiationInPeriodTest extends TestCase
         );
     }
 
-    function avgRadiationForDayProvider(): Generator
+    static function avgRadiationForDayProvider(): Generator
     {
         yield '1jan' => [1, 166, 1999];
         yield '20 aug' => [Carbon::parse('2011-08-20')->dayOfYear, 1610, 1999];

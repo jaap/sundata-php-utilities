@@ -68,7 +68,7 @@ class DateRangeTzTest extends TestCase
         );
     }
 
-    function periodDataProvider(): array
+    static function periodDataProvider(): array
     {
         return [
             ['2022-01-01', 'Europe/Amsterdam', '2022-01-01T00:00:00+01:00', '2022-01-02T00:00:00+01:00'],
