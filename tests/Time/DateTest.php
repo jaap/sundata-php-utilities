@@ -48,7 +48,7 @@ class DateTest extends TestCase
         );
     }
 
-    function isBeforeAndIsAfterDataProvider(): array
+    static function isBeforeAndIsAfterDataProvider(): array
     {
         return [
             ['2021-01-01', '2021-01-02', true, false],

@@ -14,7 +14,7 @@ class MassTest extends TestCase
         $this->assertInstanceOf(FormattedMeasurement::class, $mass->format());
     }
 
-    public function formatDataProvider(): array
+    public static function formatDataProvider(): array
     {
         return [
             [$kg = 1, 'g'],
@@ -50,7 +50,7 @@ class MassTest extends TestCase
         $this->assertEquals($kg / 1000 / 1000 / 1000 / 1000, $mass->asGt());
     }
 
-    public function formatsToTheRightValueAndUnitDataProvider(): array
+    public static function formatsToTheRightValueAndUnitDataProvider(): array
     {
         return [
             [5432, '5432 kg'],

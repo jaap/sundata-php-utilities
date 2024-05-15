@@ -11,7 +11,7 @@ use Sundata\Utilities\Time\Period;
 
 class RadiationInPeriodTest extends TestCase
 {
-    public function RadiationInPeriodDataProvider(): Generator
+    public static function RadiationInPeriodDataProvider(): Generator
     {
         yield 'Full year, but you forget end-is-exclusive' => [
             '2019-01-01',
@@ -91,7 +91,7 @@ class RadiationInPeriodTest extends TestCase
         ];
     }
 
-    public function sumDataProvider(): Generator
+    public static function sumDataProvider(): Generator
     {
         $expectedDecember = 5385;
         yield 'December' => [
@@ -170,7 +170,7 @@ class RadiationInPeriodTest extends TestCase
         );
     }
 
-    function avgRadiationForDayProvider(): Generator
+    static function avgRadiationForDayProvider(): Generator
     {
         yield '1jan' => [1, 166, 1999];
         yield '20 aug' => [Carbon::parse('2011-08-20')->dayOfYear, 1610, 1999];

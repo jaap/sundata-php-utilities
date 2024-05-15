@@ -14,7 +14,7 @@ class EnergyTest extends TestCase
         $this->assertInstanceOf(FormattedMeasurement::class, $energy->format());
     }
 
-    public function formatDataProvider(): array
+    public static function formatDataProvider(): array
     {
         return [
             [$kwh = 1, 'Wh'],
@@ -50,7 +50,7 @@ class EnergyTest extends TestCase
         $this->assertEquals($kwh / 1000 / 1000 / 1000, $energy->asTwh());
     }
 
-    public function formatsToTheRightValueAndUnitDataProvider(): array
+    public static function formatsToTheRightValueAndUnitDataProvider(): array
     {
         return [
             [54321, '54.32 MWh'],

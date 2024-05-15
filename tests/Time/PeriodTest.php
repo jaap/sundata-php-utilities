@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 class PeriodTest extends TestCase
 {
 
-    public function periodLengthDataProvider(): array
+    public static function periodLengthDataProvider(): array
     {
         //@formatter:off
     return [
@@ -41,7 +41,7 @@ class PeriodTest extends TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
-    public function isInPeriodDataProvider(): array
+    public static function isInPeriodDataProvider(): array
     {
         $defaultStart = '2000-01-01T00:00:00+01:00';
         $defaultEnd = '2000-01-02T00:00:00+01:00';
@@ -69,7 +69,7 @@ class PeriodTest extends TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
-    function dstSplittingProvider(): array
+    static function dstSplittingProvider(): array
     {
         return [
             'normal' => ['2018-01-01', '2019-01-01', [
